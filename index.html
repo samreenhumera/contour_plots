@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contour Plot</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    
+    <div class="box"><h1>CONTOUR PLOTS</h1></div>
+    <div class="content1">
+        <p class="text">   A contour plot is a graphical method to visualize the <b><i>3-D surface </i></b> by plotting constant Z slices called "<b>CONTOURS</b>" in a <b><i>2-D format</i></b>.</p>
+        <p class="text">The contour plot is an alternative to a 3-D surface plot.</p>
+        <p>It uses <b><i>contour lines</i></b> to connect points with the same value.</p>
+
+        <p class="text"><b>The contour plot is formed by:</b></p>
+        <ul>
+            <li class="text"><b>Vertical axis:</b> Independent variable 2</li>
+            <li class="text"><b>Horizontal axis:</b> Independent variable 1</li>
+            <li class="text"><b>Lines:</b> iso-response values, can be calculated with the help<b><i>(x,y)</i></b>.</li>
+        </ul>
+    <p class="text">A contour plot is appropriate if you want to see how some value Z changes as a function of two inputs, X and Y:</p>
+    <p class="text centre">z = f(x, y)</p>
+    </div>
+    <div class="content1">
+        <p class="text centre"><b>PURPOSE OF CONTOUR PLOT</b></p>
+        <p class="text subhead"><b>Visual Representation:</b></p>
+        <ul>
+            <li class="text">Contour plotting serves as a visual tool to represent complex data sets.</li>
+            <li class="text">It provides a graphical representation that is easier to interpret than raw numerical data.</li>
+            <li class="text">Visual patterns and trends become more apparent, aiding in understanding the dataset at a glance.
+            </li>
+        </ul>
+        <p class="text subhead"><b>Variation in a Dataset:</b></p>
+        <ul>
+            <li class="text">Contour plots specifically highlight variations in datasets that involve two continuous variables.</li>
+            <li class="text">These variations can include changes in magnitude, distribution, or other characteristics of the data.</li>
+        </ul>
+        <p class="text subhead"> <b>Highlight Peaks, Valleys, or Areas of Interest:</b></p>
+        <ul>
+            <li class="text">Contour plots highlight specific features such as peaks and valleys in the dataset.</li>
+            <li class="text">This makes it easier to pinpoint areas of interest, anomalies, or critical regions that may require further analysis or attention.</li>
+        </ul>
+    </div>
+    <div class="content1">
+        <p class="text centre"><b>APPLICATION OF CONTOUR PLOT</b></p>
+        <p class="text subhead"><b>Science:</b></p>
+        <ul>
+            <li><I>RESEARCH VISUALISATION:</I>Contour maps assist scientists in visually representing and interpreting complex datasets, aiding in the identification of patterns and trends in scientific research.
+            </li>
+        </ul>
+        <p class="text subhead"><b>Geography:</b></p>
+        <ul>
+            <li><I>TOPOGRAPHICAL INSIGHT:</I>Geographers use contour maps to provide a detailed representation of the Earth's surface, showcasing elevation changes and helping in the study of terrain features.</li>
+        </ul>
+        <p class="text subhead"><b>Engineering:</b></p>
+        <ul>
+            <li><I>STRESS AND TEMPERATURE ANALYSIS:</I>Engineers leverage contour maps to analyze stress patterns, temperature distributions, and other factors critical to structural and system design.</li>
+        </ul>
+        <p class="text subhead"><b>Environmental Studies:</b></p>
+        <ul>
+            <li><I>TERRAIN CHARACTERIZATION:</I>Contour maps play a crucial role in environmental studies by visually characterizing terrain features, supporting ecological research and land management.</li>
+        </ul>
+        <p class="text subhead"><b>Geology:</b></p>
+        <ul>
+            <li><I>LANDSCAPE UNDERSTANDING:</I>Geologists utilize contour maps to understand the topography of landscapes, aiding in geological surveys, resource exploration, and hazard assessment.
+            </li>
+        </ul>
+        <p class="text subhead"><b>Data Analysis:</b></p>
+        <ul>
+            <li><I>PATTERN RECOGNITION:</I>In data analysis, contour maps enable researchers to explore intricate relationships and identify patterns within numerical datasets, facilitating informed decision-making and insights.</li>
+        </ul>
+    </div>
+    <DIV class="content1" >
+        <p class="text centre"><b>TYPES OF CONTOUR PLOT</b></p>
+        
+
+    </DIV>
+    <p class="text subheadtypes"><b>Rectangular Contour Plot:</b></p>
+    <div class="content1">
+          <ul>
+            <li>A rectangular contour plot, also known as a 2D contour plot or simply a contour plot, is a graphical representation of three-dimensional data on a two-dimensional plane.</li>
+            <li> It uses Cartesian coordinates (x, y) to represent data points, with contour lines indicating regions of constant values for a third variable. </li>
+            <p>In a rectangular contour plot:</p>
+            <li>The x-axis and y-axis represent the two independent continuous variables.</li>
+            <li> Contour lines, curves, or filled regions on the plot connect points with the same values of a third variable, usually represented by color or shading.
+            </li>
+          </ul>
+    </div>
+    <strong class="cp-output" style="padding:0 10px;">Program</strong>
+    <div>
+        <pre class="code-box">
+            <code>
+<span style="color: rgb(93, 91, 91);"># imports </span>
+<span class="highlight">import</span> numpy <span class="highlight">as</span> np 
+<span class="highlight">import</span> matplotlib.pyplot <span class="highlight">as</span> plt 
+<span style="color: rgb(93, 91, 91);"># define a function </span>
+def <span class="func">func</span>(x, y): 
+return np.<span class="func">sin</span>(x) ** 2 + np.<span class="func">cos</span>(y) **2 
+
+<span style="color: rgb(93, 91, 91);"># generate 50 values b/w 0 a5 </span>
+
+x = np.<span class="func">linspace</span>(0, 5, 50) 
+y = np.<span class="func">linspace</span>(0, 5, 50) 
+                
+<span style="color: rgb(93, 91, 91);"># Generate combination of grids </span>
+X, Y = np.<span class="func">meshgrid</span>(x, y) 
+Z = <span class="func">func</span>(X, Y) 
+                
+<span style="color: rgb(93, 91, 91);"># Draw rectangular contour plot </span>
+plt.<span class="func">contour</span>(X, Y, Z, <span class="ahigh">cmap</span>=<span class="str">'gist_rainbow_r'</span>); 
+                </code>
+        </pre>               
+    </div>
+    <strong class="cp-output" style="padding:0 10px;">Output</strong>
+    <div class=" imgcentre">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20201228074038/rectangularcontour.PNG" alt="RectanglePlot" width="500">
+    </div>   
+</div>
+<p class="text subheadtypes"><b>Polar Contour plot:</b></p>
+<div class="content1">
+    <ul>
+      <li>A polar contour plot is a graphical representation of three-dimensional data in a polar coordinate system. </li>
+      <li>  Unlike rectangular coordinates (x, y), which use a horizontal and vertical axis, polar coordinates use a radius and an angle.  </li>
+      <p>In a polar contour plot:</p>
+      <li>The x-axis and y-axis represent the two independent continuous variables.</li>
+      <li> The angle corresponds to the angular direction around the center, often measured in degrees or radians.</li>
+    </ul>
+</div>
+<strong class="cp-output" style="padding:0 10px;">Program</strong>
+<div >
+    <pre class="code-box">
+        <code>
+<span style="color: rgb(93, 91, 91);"># generate r and theta arrays</span>
+rad_arr = np. <span class="func">radians</span>(np.linspace(0, 360, 20)) 
+r_arr = np.<span class="func">arange</span>(0, 1, .1) 
+
+<span style="color: rgb(93, 91, 91);"># define function</span>
+def <span class="func">func</span>(r, theta): 
+<span class="highlight">return</span> r * np.<span class="func">sin</span>(theta) 
+
+r, theta = np.<span class="func">meshgrid</span>(r_arr, rad_arr) 
+
+<span style="color: rgb(93, 91, 91);"># get the values of response variables </span>
+values = <span class="func">func</span>(r,theta) 
+
+<span style="color: rgb(93, 91, 91);"># plot the polar coordinates</span>
+fig, ax = plt.<span class="func">subplots</span>(<span class="ahigh">subplot_kw</span>=<span class="func">dict</span>(<span class="ahigh">projection</span>=<span class="str">'polar'</span>)) 
+ax.<span class="func">contourf</span>(theta, r, values, <span class="ahigh">cmap</span>=<span class="str">'Spectral_r'</span>) 
+
+plt.<span class="func">show</span>()
+
+</code>
+    </pre>                
+    <strong class="cp-output" style="padding:10px 15px;">Output</strong>                <div class="imgcentre">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20201228074037/polarcontour.PNG" alt="PolarPlot" width="500">
+    </div>  
+</div>
+<p class="text subheadtypes"><b>Ternary Contour Plot:</b></p>
+<div class="content1">
+    <ul>
+      <li>A ternary contour plot is a graphical representation of three-variable data on a ternary diagram. </li>
+      <li> A ternary diagram is a triangular graph where the three corners represent the three components of a mixture, and points within the triangle represent compositions of these components.  </li>
+      <li>he axes in a ternary diagram are labeled with percentages or proportions of each component.</li>
+      <p>In a ternary contour plot:</p>
+      <li>The plot is based on a triangular coordinate system, with each corner of the triangle representing a pure component, and the sides representing binary mixtures.</li>
+      <li>  Contour lines connect points with equal values of a third variable within the ternary space. These lines indicate regions of constant concentration or some other property.</li>
+    </ul>
+</div>
+<strong class="cp-output" style="padding:0 10px;">Program</strong>
+<div >
+    <pre class="code-box">
+        <code>
+<span style="color: rgb(93, 91, 91);"># install & import plotly </span>
+! pip install plotly 
+<span class="highlight">import</span> plotly.figure_factory <span class="highlight">as</span> ff 
+
+<span style="color: rgb(93, 91, 91);"># Define variables </span>
+a = np.<span class="func">arange</span>([0. , 0. , 0., 0., 1./3, 1./3, 1./3, 2./3, 2./3, 1.]) 
+b = np.<span class="func">arange</span>([0., 1./3, 2./3, 1., 0., 1./3, 2./3, 0., 1./3, 0.]) 
+c = 1 - a - b 
+<span style="color: rgb(93, 91, 91);"># Define function that generates response variable </span>
+func = (a - 0.02) * b * (a - 0.5) * (b - 0.4) * (c - 1)**2
+
+<span style="color: rgb(93, 91, 91);"># plot ternary contour </span>
+fig = ff.<span class="func">create_ternary_contour</span>(np.<span class="func">arange</span>([a, b, c]), func
+,<span class="ahigh">pole_labels</span>=['a', 'b', 'c'],
+<span class="ahigh">interp_mode</span>='cartesian',<span class="ahigh">colorscale</span>='Viridis',) 
+
+fig.<span class="func">show</span>() 
+                                    
+        </code>
+    </pre>    
+    <strong class="cp-output" style="padding:10px 25px;">Output</strong>                <div class="output">
+
+    <div class="imgcentre">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20201228074035/ternarycontour.PNG" alt="TernaryPlot" width="500">
+    </div>            
+</div>
+<div class="footer">
+    <p class="foot">Submitted by: Samreen Humera - AI & DS dept.[Roll No.:22922]</p>
+    <p class="foot">C.Abdul Hakeem College Of Engineering And Technology</p>
+    <p class="foot"></p>
+</div>
+
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
